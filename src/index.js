@@ -10,6 +10,8 @@ import Empregistor from './appmodules/emp/auth/Empregistor';
 import Empmainpage from './appmodules/emp/dashboard/Empmainpage';
 import EmpHomepage from './appmodules/emp/dashboard/EmpHomepage';
 import Empproperty from './appmodules/emp/dashboard/Empproperty';
+import Empdatabinding from './appmodules/emp/dashboard/Empdatabinding';
+import Myaxios from './appmodules/emp/dashboard/Myaxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +24,8 @@ root.render(
             <Route path='empmainpage' element={<Empmainpage/>}>
               <Route path='' element={<EmpHomepage/>}></Route>
               <Route path='property' element={<Empproperty/>}></Route>
+              <Route path='mydata' element={<Empdatabinding/>}></Route>
+              <Route path='myaxios' element={<Myaxios/>}></Route>
               
             </Route>
           </Routes>
