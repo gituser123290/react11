@@ -1,35 +1,44 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 function Myaxios() {
+    const [users, setusers] = useState([])
 
-    const Myaxiosfunc = ()=>{
-        axios.get('https://dummyjson.com/users').then((d)=>{
-            console.log(d)
+    const Myaxiosfunc = () => {
+        axios.get('https://dummyjson.com/users').then((d) => {
+            console.log(d.data.users);
+            setusers(d.data.users);
         })
-};
+    };
 
-//     const Myaxiosfunc = ()=>{
-//        fetch('https://dummyjson.com/users').then((d)=>{
-//             console.log(d)
-//         })
-// };
+    //     const Myaxiosfunc = ()=>{
+    //        fetch('https://dummyjson.com/users').then((d)=>{
+    //             console.log(d)
+    //         })
+    // };
 
-useEffect(()=>{
-    Myaxiosfunc();
-},[])
+    useEffect(() => {
+        Myaxiosfunc();
+    }, [])
 
 
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-md-3'>
-                    <div className='card p-3 mt-2 bg-danger'>
-                        <h1>sno:</h1>
-                        <h4>Student Name:</h4>
-                        <p>Subject:</p>
-                    </div>
-                </div>
+                {users.map((u) => {
+                    return (
+                        <div className='col-md-3' key={u.id}>
+                            <Link className='card p-3 mt-2' to={`detailspage/`+u.id}>
+                                <h1>UId:{u.id}</h1>
+                                <h4>Name: {u.firstName}</h4>
+                                <p>Gender: {u.gender}</p>
+                                <p>Group:{u.bloodGroup}</p>
+                                <p>City:{u.company.address.city}</p>
+                            </Link>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
