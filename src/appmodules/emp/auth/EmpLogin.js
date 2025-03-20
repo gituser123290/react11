@@ -12,19 +12,19 @@ function EmpLogin() {
                                 <p className='h4'>Employee Login</p>
                             </div>
                             <div className='col-12'>
-                                <div class="mb-3">
-                                    <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" placeholder='enter email id'/>
+                                <div className="mb-3">
+                                    <label className="form-label">Email address</label>
+                                    <input type="email" className="form-control" placeholder='enter email id'/>
                                 </div>
                             </div>
                             <div className='col-12'>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder='enter password'/>
+                                <div className="mb-3">
+                                    <label className="form-label">Password</label>
+                                    <input type="password" className="form-control" placeholder='enter password'/>
                                 </div>
                             </div>
                             <div className='col-12'>
-                                <div class="mb-3">
+                                <div className="mb-3">
                                    <input type='button' value="Login" className='btn btn-success'/>
                                    <Link to="registor" className='ms-5'>Registor Now</Link>
                                 </div>
