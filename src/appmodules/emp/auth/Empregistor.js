@@ -1,8 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from "react-hook-form"
 
 function Empregistor() {
+    const xyz = useNavigate();
+    
+
+    const {register,handleSubmit,formState: { errors }} = useForm()
+
+const mysubmit = (e)=>{
+    console.log(e);
+    xyz("/employee");
+}
+
+
+
     return (
+        <form onSubmit={handleSubmit(mysubmit)}>
         <div className='container mt-5'>
             <div className='row justify-content-center'>
                 <div className='col-md-8 border shadow p-3'>
@@ -12,40 +26,45 @@ function Empregistor() {
                                 <p className='h4'>Employee Registor Page</p>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" placeholder='enter email id' />
+                                <div className="mb-3">
+                                    <label className="form-label">Email address</label>
+                                    <input type="email" className="form-control" placeholder='enter email id' name='email' {...register("email",{required:true})}/>
+                                    {errors.email && <p className='text-danger'> email id is required</p>}
                                 </div>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" placeholder='enter full Name' />
+                                <div className="mb-3">
+                                    <label className="form-label">Full Name</label>
+                                    <input type="text" className="form-control" placeholder='enter full Name' name='fullname' {...register("fullname",{required:true,minLength:4,maxLength:10})}/>
+                                    {/* {errors.fullname && <p className='text-danger'>full name is required</p>} */}
+                                    {errors.fullname?.type==='required' && <p className='text-danger'>full name is required</p>}
+                                    {errors.fullname?.type==='minLength' && <p className='text-warning'>to small name</p>}
+                                    {errors.fullname?.type==='maxLength' && <p className='text-success'>to strong name</p>}
                                 </div>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Phono No</label>
-                                    <input type="text" class="form-control" placeholder='enter phone' />
+                                <div className="mb-3">
+                                    <label className="form-label">Phono No</label>
+                                    <input type="text" className="form-control" placeholder='enter phone' name='phone' {...register("phone")}/>
                                 </div>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Gender</label><br/>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" value="male" />
-                                        <label class="form-check-label">Male</label>
+                                <div className="mb-3">
+                                    <label className="form-label">Gender</label><br/>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="gender" value="male" {...register("gender")}/>
+                                        <label className="form-check-label">Male</label>0
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" value="female" />
-                                        <label class="form-check-label" >Female</label>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="gender" value="female" {...register("gender")}/>
+                                        <label className="form-check-label" >Female</label>
                                     </div>
                                 </div>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Role</label>
-                                    <select className='form-select'>
+                                <div className="mb-3">
+                                    <label className="form-label">Role</label>
+                                    <select className='form-select' {...register("role")}>
                                         <option hidden>Select Role type</option>
                                         <option>Employee</option>
                                         <option>Admin</option>
@@ -54,14 +73,14 @@ function Empregistor() {
                                 </div>
                             </div>
                             <div className='col-md-6'>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder='enter password' />
+                                <div className="mb-3">
+                                    <label className="form-label">Password</label>
+                                    <input type="password" className="form-control" placeholder='enter password' name='pass' {...register("pass")}/>
                                 </div>
                             </div>
                             <div className='col-12'>
-                                <div class="mb-3">
-                                    <input type='button' value="Registor Now" className='btn btn-success' />
+                                <div className="mb-3">
+                                    <input type='submit' value="Registor Now" className='btn btn-success' />
                                    
                                 </div>
                             </div>
@@ -70,6 +89,7 @@ function Empregistor() {
                 </div>
             </div>
         </div>
+        </form>
 
     )
 }
