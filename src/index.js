@@ -13,6 +13,10 @@ import Empproperty from './appmodules/emp/dashboard/Empproperty';
 import Empdatabinding from './appmodules/emp/dashboard/Empdatabinding';
 import Myaxios from './appmodules/emp/dashboard/Myaxios';
 import Userdetailspage from './appmodules/emp/dashboard/Userdetailspage';
+import AdminLogin from './appmodules/admin/auth/AdminLogin';
+import Adminregister from './appmodules/admin/auth/Adminregistor';
+import EmpUpdates from './appmodules/emp/dashboard/EmpUpdates';
+import EmpReports from './appmodules/emp/dashboard/EmpReports';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,9 +31,14 @@ root.render(
               <Route path='property' element={<Empproperty/>}></Route>
               <Route path='mydata' element={<Empdatabinding/>}></Route>
               <Route path='myaxios' element={<Myaxios/>}></Route>
+              <Route path='updates' element={<EmpUpdates/>}></Route>
+              <Route path='reports' element={<EmpReports/>}></Route>
               <Route path='myaxios/detailspage/:id' element={<Userdetailspage/>}></Route>
-              
             </Route>
+            <Route path='admin' element={<AdminLogin/>}></Route>
+            <Route path='admin/registor' element={<Adminregister/>}></Route>
+            <Route path='superadmin' element={<AdminLogin/>}></Route>
+            <Route path='superadmin/registor' element={<Adminregister/>}></Route>
           </Routes>
       </BrowserRouter>
   </React.StrictMode>

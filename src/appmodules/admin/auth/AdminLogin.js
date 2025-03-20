@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function EmpLogin() {
+function AdminLogin() {
     return (
         <div className='container mt-5'>
             <div className='row justify-content-center'>
@@ -9,7 +9,18 @@ function EmpLogin() {
                     <div className='container-fluid'>
                         <div className='row'>
                             <div className='col-12 mb-5 text-center'>
-                                <p className='h4'>Employee Login</p>
+                                <p className='h4'>Admin Login</p>
+                            </div>
+                            <div className='col-md-12'>
+                                <div class="mb-3">
+                                    <label class="form-label">Role</label>
+                                    <select className='form-select'>
+                                        <option hidden>Select Role type</option>
+                                        <option>Employee</option>
+                                        <option>Admin</option>
+                                        <option>Supper_Admin</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className='col-12'>
                                 <div class="mb-3">
@@ -29,11 +40,6 @@ function EmpLogin() {
                                    <Link to="registor" className='ms-5'>Registor Now</Link>
                                 </div>
                             </div>
-                            <div className='col-12'>
-                                <div class="mb-3">
-                                   <Link to="/empmainpage" className='ms-5'>Go Direct</Link>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,4 +48,4 @@ function EmpLogin() {
     )
 }
 
-export default EmpLogin
+export default AdminLogin;

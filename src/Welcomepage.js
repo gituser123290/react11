@@ -20,7 +20,7 @@ function Welcomepage() {
 
                 </div>
                 <div className='col-md-4 text-center'>
-                    <Link to="">
+                    <Link to="admin">
                         <div className='card border shadow p-3'>
                         <h1><FaUser/></h1>
                         <h4>Admin</h4>
@@ -29,7 +29,7 @@ function Welcomepage() {
 
                 </div>
                 <div className='col-md-4 text-center'>
-                    <Link to="">
+                    <Link to="superadmin">
                         <div className='card border shadow p-3'>
                         <h1><FaUser/></h1>
                         <h4>Supper Admin</h4>

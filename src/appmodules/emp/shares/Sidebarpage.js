@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 function Sidebarpage() {
   return (
     <div className="flex-shrink-0 p-3">
-    <a href="/" className="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-      
-      <span className="fs-5 fw-semibold">Collapsible</span>
-    </a>
+    <Link to="/" className="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+      <span className="fs-5 fw-semibold">Dashboard</span>
+    </Link>
     <ul className="list-unstyled ps-0">
       <li className="mb-1">
         <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
@@ -19,8 +18,8 @@ function Sidebarpage() {
             <li><Link to="property" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Property</Link></li>
             <li><Link to="mydata" className="link-body-emphasis d-inline-flex text-decoration-none rounded">data binding</Link></li>
             <li><Link to="myaxios" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Axios api</Link></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+            <li><Link to="updates" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</Link></li>
+            <li><Link to="reports" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</Link></li>
           </ul>
         </div>
       </li>
@@ -30,10 +29,10 @@ function Sidebarpage() {
         </button>
         <div className="collapse" id="dashboard-collapse">
           <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</Link></li>
           </ul>
         </div>
       </li>
@@ -43,10 +42,10 @@ function Sidebarpage() {
         </button>
         <div className="collapse" id="orders-collapse">
           <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">New</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</Link></li>
           </ul>
         </div>
       </li>
@@ -57,10 +56,10 @@ function Sidebarpage() {
         </button>
         <div className="collapse" id="account-collapse">
           <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</Link></li>
+            <li><Link to="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</Link></li>
           </ul>
         </div>
       </li>
